@@ -23,59 +23,27 @@ public class AnimalsActivity extends AppCompatActivity {
     }
 
     public void playDog(View view) {
-        releaseMediaPlayer();
-        mMediaPlayer = MediaPlayer.create(this, R.raw.dog_bark);
-        mMediaPlayer.start();
-        mMediaPlayer.setOnCompletionListener(mCompletionListener);
+        requestAndImplementAudioFocus(R.raw.dog_bark);
     }
 
-    private AudioManager.OnAudioFocusChangeListener mOnAudioFocusChange = new AudioManager.OnAudioFocusChangeListener() {
-        @Override
-        public void onAudioFocusChange(int focusChange) {
-            if (focusChange == AudioManager.AUDIOFOCUS_LOSS) {
-                releaseMediaPlayer();
-            } else if (focusChange == AudioManager.AUDIOFOCUS_GAIN) {
-                mMediaPlayer.start();
-            } else if (focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT || focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK) {
-                mMediaPlayer.pause();
-                mMediaPlayer.seekTo(0);
-            }
-        }
-    };
-
     public void playCat(View view) {
-        releaseMediaPlayer();
-        mMediaPlayer = MediaPlayer.create(this, R.raw.cat_meow);
-        mMediaPlayer.start();
-        mMediaPlayer.setOnCompletionListener(mCompletionListener);
+        requestAndImplementAudioFocus(R.raw.cat_meow);
     }
 
     public void playCow(View view) {
-        releaseMediaPlayer();
-        mMediaPlayer = MediaPlayer.create(this, R.raw.cow_moo);
-        mMediaPlayer.start();
-        mMediaPlayer.setOnCompletionListener(mCompletionListener);
+        requestAndImplementAudioFocus(R.raw.cow_moo);
     }
 
     public void playPig(View view) {
-        releaseMediaPlayer();
-        mMediaPlayer = MediaPlayer.create(this, R.raw.pig_snort);
-        mMediaPlayer.start();
-        mMediaPlayer.setOnCompletionListener(mCompletionListener);
+        requestAndImplementAudioFocus(R.raw.pig_snort);
     }
 
     public void playHorse(View view) {
-        releaseMediaPlayer();
-        mMediaPlayer = MediaPlayer.create(this, R.raw.horse_neigh);
-        mMediaPlayer.start();
-        mMediaPlayer.setOnCompletionListener(mCompletionListener);
+        requestAndImplementAudioFocus(R.raw.horse_neigh);
     }
 
     public void playRooster(View view) {
-        releaseMediaPlayer();
-        mMediaPlayer = MediaPlayer.create(this, R.raw.rooster_crow);
-        mMediaPlayer.start();
-        mMediaPlayer.setOnCompletionListener(mCompletionListener);
+        requestAndImplementAudioFocus(R.raw.rooster_crow);
     }
 
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
@@ -92,5 +60,32 @@ public class AnimalsActivity extends AppCompatActivity {
 
         mMediaPlayer = null;
     }
+
+    public void requestAndImplementAudioFocus(int resourceID) {
+        releaseMediaPlayer();
+
+        int result;
+        result = mAudioManager.requestAudioFocus(mOnAudioFocusChange, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN);
+
+        if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
+            mMediaPlayer = MediaPlayer.create(this, resourceID);
+            mMediaPlayer.start();
+            mMediaPlayer.setOnCompletionListener(mCompletionListener);
+        }
+    }
+
+    private AudioManager.OnAudioFocusChangeListener mOnAudioFocusChange = new AudioManager.OnAudioFocusChangeListener() {
+        @Override
+        public void onAudioFocusChange(int focusChange) {
+            if (focusChange == AudioManager.AUDIOFOCUS_LOSS) {
+                releaseMediaPlayer();
+            } else if (focusChange == AudioManager.AUDIOFOCUS_GAIN) {
+                mMediaPlayer.start();
+            } else if (focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT || focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK) {
+                mMediaPlayer.pause();
+                mMediaPlayer.seekTo(0);
+            }
+        }
+    };
 
 }
