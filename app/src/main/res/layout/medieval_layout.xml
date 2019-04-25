@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/castle">
+
+    <ImageView
+        android:id="@+id/dragon"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/dragon"
+        android:onClick="playDragon"/>
+
+    <ImageView
+        android:id="@+id/swords"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/swords"
+        android:layout_centerInParent="true"
+        android:onClick="playSwords"/>
+
+    <ImageView
+        android:id="@+id/battle_horn"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/battle_horn"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:onClick="playBattleHorn"/>
+
+    <ImageView
+        android:id="@+id/tavern"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/tavern"
+        android:layout_alignParentBottom="true"
+        android:onClick="playTavern"/>
+
+    <ImageView
+        android:id="@+id/blacksmith"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/blacksmith"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:onClick="playBlacksmith"/>
+
+</RelativeLayout>

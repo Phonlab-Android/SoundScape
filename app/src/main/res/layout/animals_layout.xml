@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/farm">
+
+    <LinearLayout
+        style="@style/ImageColumn">
+
+        <ImageView
+            style="@style/CircleImage"
+            android:layout_weight="1"
+            android:src="@drawable/dog"
+            android:onClick="playDog"/>
+
+        <ImageView
+            style="@style/CircleImage"
+            android:layout_weight="1"
+            android:src="@drawable/cow"
+            android:onClick="playCow"/>
+
+        <ImageView
+            style="@style/CircleImage"
+            android:layout_weight="1"
+            android:src="@drawable/horse"
+            android:onClick="playHorse"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/ImageColumn">
+
+        <ImageView
+            style="@style/CircleImage"
+            android:layout_weight="1"
+            android:src="@drawable/cat"
+            android:onClick="playCat"/>
+
+        <ImageView
+            style="@style/CircleImage"
+            android:layout_weight="1"
+            android:src="@drawable/pig"
+            android:onClick="playPig"/>
+
+        <ImageView
+            style="@style/CircleImage"
+            android:layout_weight="1"
+            android:src="@drawable/rooster"
+            android:onClick="playRooster"/>
+
+    </LinearLayout>
+
+</LinearLayout>

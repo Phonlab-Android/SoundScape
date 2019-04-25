@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.phonlab.soundscape.MainActivity">
+
+    <TextView
+        style="@style/HeaderText"
+        android:text="SoundScape" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            style="@style/ImageColumn">
+
+            <ImageView
+                style="@style/CircleImage"
+                android:src="@drawable/animal_image"
+                android:onClick="launchAnimals"/>
+
+            <ImageView
+                style="@style/CircleImage"
+                android:src="@drawable/musical_notes"
+                android:onClick="launchMusic"/>
+
+            <ImageView
+                style="@style/CircleImage"
+                android:src="@drawable/space"
+                android:onClick="launchSpace"/>
+
+            <ImageView
+                style="@style/CircleImage"
+                android:src="@drawable/two" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/ImageColumn">
+
+            <ImageView
+                style="@style/CircleImage"
+                android:src="@drawable/nature"
+                android:onClick="launchNature"/>
+
+            <ImageView
+                style="@style/CircleImage"
+                android:src="@drawable/medieval"
+                android:onClick="launchMedieval"/>
+
+            <ImageView
+                style="@style/CircleImage"
+                android:src="@drawable/one"
+                android:onClick="launchYourOwn"/>
+
+            <ImageView
+                style="@style/CircleImage"
+                android:src="@drawable/three" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
