@@ -27,6 +27,12 @@ public class MedievalActivity extends AppCompatActivity{
         mAudioManager = (AudioManager) this.getSystemService(Context.AUDIO_SERVICE);
     }
 
+    @Override
+    protected void onStop(){
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
     //Each of our 5 image click methods calls requestAndImplementAudioFocus and passes in its raw file
     public void playDragon(View view){
         requestAndImplementAudioFocus(R.raw.dragon_roar);
