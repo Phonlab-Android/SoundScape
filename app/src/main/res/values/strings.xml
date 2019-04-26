@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SoundScape</string>
+    <string name="loop">Loop:</string>
 </resources>

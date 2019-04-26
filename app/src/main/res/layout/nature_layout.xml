@@ -37,4 +37,21 @@
         android:layout_margin="4dp"
         android:onClick="playStorm"/>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loop"
+            style="@style/LoopTextView"/>
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/loop_toggle"
+            style="@style/SwitchCompatStyle"/>
+
+    </LinearLayout>
+
 </LinearLayout>
