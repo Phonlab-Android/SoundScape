@@ -8,19 +8,19 @@
     <LinearLayout
         style="@style/ImageColumn">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             style="@style/CircleImage"
             android:layout_weight="1"
             android:src="@drawable/dog"
             android:onClick="playDog"/>
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             style="@style/CircleImage"
             android:layout_weight="1"
             android:src="@drawable/cow"
             android:onClick="playCow"/>
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             style="@style/CircleImage"
             android:layout_weight="1"
             android:src="@drawable/horse"
@@ -31,19 +31,19 @@
     <LinearLayout
         style="@style/ImageColumn">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             style="@style/CircleImage"
             android:layout_weight="1"
             android:src="@drawable/cat"
             android:onClick="playCat"/>
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             style="@style/CircleImage"
             android:layout_weight="1"
             android:src="@drawable/pig"
             android:onClick="playPig"/>
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             style="@style/CircleImage"
             android:layout_weight="1"
             android:src="@drawable/rooster"

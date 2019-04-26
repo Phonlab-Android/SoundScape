@@ -11,7 +11,6 @@ import android.view.View;
 public class AnimalsActivity extends AppCompatActivity {
 
     MediaPlayer mMediaPlayer;
-
     AudioManager mAudioManager;
 
     @Override

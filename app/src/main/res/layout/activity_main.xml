@@ -2,68 +2,73 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/maingrad"
+    android:orientation="vertical"
     tools:context="com.example.phonlab.soundscape.MainActivity">
 
     <TextView
         style="@style/HeaderText"
         android:text="SoundScape" />
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content">
 
         <LinearLayout
-            style="@style/ImageColumn">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-            <ImageView
-                style="@style/CircleImage"
-                android:src="@drawable/animal_image"
-                android:onClick="launchAnimals"/>
+            <LinearLayout style="@style/ImageColumn">
 
-            <ImageView
-                style="@style/CircleImage"
-                android:src="@drawable/musical_notes"
-                android:onClick="launchMusic"/>
+                <de.hdodenhof.circleimageview.CircleImageView
+                    style="@style/CircleImage"
+                    android:onClick="launchAnimals"
+                    android:src="@drawable/animal_image" />
 
-            <ImageView
-                style="@style/CircleImage"
-                android:src="@drawable/space"
-                android:onClick="launchSpace"/>
+                <de.hdodenhof.circleimageview.CircleImageView
+                    style="@style/CircleImage"
+                    android:onClick="launchMusic"
+                    android:src="@drawable/musical_notes" />
 
-            <ImageView
-                style="@style/CircleImage"
-                android:src="@drawable/two" />
+                <de.hdodenhof.circleimageview.CircleImageView
+                    style="@style/CircleImage"
+                    android:onClick="launchSpace"
+                    android:src="@drawable/space" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    style="@style/CircleImage"
+                    android:src="@drawable/two" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ImageColumn">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    style="@style/CircleImage"
+                    android:onClick="launchNature"
+                    android:src="@drawable/nature" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    style="@style/CircleImage"
+                    android:onClick="launchMedieval"
+                    android:src="@drawable/medieval" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    style="@style/CircleImage"
+                    android:onClick="launchYourOwn"
+                    android:src="@drawable/one" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    style="@style/CircleImage"
+                    android:src="@drawable/three" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
-        <LinearLayout
-            style="@style/ImageColumn">
-
-            <ImageView
-                style="@style/CircleImage"
-                android:src="@drawable/nature"
-                android:onClick="launchNature"/>
-
-            <ImageView
-                style="@style/CircleImage"
-                android:src="@drawable/medieval"
-                android:onClick="launchMedieval"/>
-
-            <ImageView
-                style="@style/CircleImage"
-                android:src="@drawable/one"
-                android:onClick="launchYourOwn"/>
-
-            <ImageView
-                style="@style/CircleImage"
-                android:src="@drawable/three" />
-
-        </LinearLayout>
-
-    </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
